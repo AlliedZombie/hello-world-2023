@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta title="Oscar's Project">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Document</title>
+
+<style>
+    button{
+        width: 20vw;
+        height: 10vh;
+        background-color: gray;
+        border-radius: 10%;
+        border: 0px;
+        font-family:fantasy;
+        color: black;
+        font-size: 4vw;
+        margin-left: 10px;
+    }
+
+    button:hover{
+        color: #fff;
+    }
+
+    button:active{
+        animation-name: rotate;
+        animation-direction:reverse;
+        animation-duration: 0.1s;
+    }
+
+    #gameScreen{
+        width: 90vw;
+        height: 50vh;
+        background-color:rgb(117, 117, 117);
+        outline:solid 10px rgb(71, 71, 71);
+        border-radius:1px;
+        margin: auto;
+        margin-top: 5%;
+    }
+    #button_holder{
+        width: 100%;
+        position:absolute;
+        bottom: 10%;
+        text-align: center;
+    }
+
+    #playerHpBar{
+        
+        width: 30%;
+        height: 5%;
+        padding: 0.3%;
+        background: rgb(0, 0, 0);
+        border-radius: 5px;
+        position: relative;
+        top: 30px; left: 40px;
+
+    }
+    
+    #barRightLeft{
+        box-sizing: inherit;
+        position: relative;
+        width: 100%;
+        height:100%;
+        background: red;
+    }
+
+    #barRightLeftText{
+        box-sizing: inherit;
+        position: relative;
+        text-align: left;
+        font-family: fantasy;
+        font-size: 2vh;
+    }
+
+    #buttonAttack{
+        background:linear-gradient(45deg, rgb(233, 11, 11) 0%, rgb(139, 30, 22) 50%);
+    }
+
+    #buttonAttack:hover{
+        background:linear-gradient(45deg, rgb(182, 10, 10) 0%, rgb(97, 19, 15) 50%);
+    }
+    
+    #buttonDefence{
+        background:linear-gradient(45deg, rgb(50, 46, 255) 0%, rgb(36, 10, 180) 50%);
+    }
+    
+    #buttonDefence:hover{
+        background:linear-gradient(45deg, rgb(12, 10, 187) 0%, rgb(22, 4, 121) 50%);
+    }
+    
+    #buttonSkill{
+        background:linear-gradient(45deg, rgb(113, 7, 235) 0%, rgb(190, 26, 155) 50%);     
+    }
+   
+    #buttonSkill:hover{
+        background:linear-gradient(45deg, rgb(87, 18, 167) 0%, rgb(116, 12, 93) 50%); 
+    }
+
+    @keyframes rotate
+    {
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(5deg);
+    }
+    }
+</style>
+</head>
+<body>
+
+<div id="button_holder"> 
+    <button id="buttonAttack" onclick="PlayerHpBar()">Attack</button>
+    <button id="buttonSkill">Skill</button>
+    <button id="buttonDefence">Talk</button>
+</div>
+
+<div id=gameScreen>
+    <div id="player"></div>
+    <div id="playerHpBar">
+        <div id="barRightLeft"></div>
+        <div id="barRightLeftText">Player Hp</div>
+    </div>
+    <div id="enemy"></div>
+    <div id="enemyHpBar">
+        <div id="BarLeftRight"></div>
+    </div>
+</div>
+
+<h1>Choose between Attack, Skill or Talk.</h1>
+<h2>Attack : Fight Orcs</h2>
+<h2>Skill : Fight Mages</h2>
+<h2>Talk : Fight Townsfolk</h2>
+
+<script>
+
+
+var playerHp = 10
+
+
+
+
+
+function PlayerHpBar()
+{
+    document.getElementById("barRightLeft").style.width = playerHp + "%";
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>
